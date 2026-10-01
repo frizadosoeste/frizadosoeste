@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frizá Río Cuarto</title>
+<meta name="theme-color" content="#0B2545">
+<meta property="og:title" content="Frizá · Alimentos frizados en Río Cuarto">
+<meta property="og:description" content="Hamburguesas, papas, helados y más, con envío a domicilio en Río Cuarto. Pedí por WhatsApp.">
+<meta property="og:image" content="img/balde-marron.jpg">
+<meta property="og:locale" content="es_AR">
+<meta name="description" content="Alimentos frizados con envío a domicilio en Río Cuarto, Córdoba. Hamburguesas, papas, helados y más. Pedí fácil por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600;112,800;125,900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: una columna en celular; secciones de ancho medido sobre fondo con tinte celeste. Bloques azul oscuro marcan los momentos clave (hero, cómo comprar, contacto). */
+:root{
+  --bg:#F5FAFE; --surface:#FFFFFF; --ink:#0B2545; --muted:#4A6080; --line:#D6E5F2;
+  --sky:#3FA9E8; --sky-soft:#E1F1FC; --panel:#0B2545; --on-panel:#FFFFFF; --on-panel-muted:#A9C4E0;
+  --warm:#FF8A3D; --warm-ink:#0B2545; --photo:#FFFFFF; --wa:#1FAF5A; --shadow:0 10px 30px rgba(11,37,69,.10);
+  --f-display:"Archivo","Arial Black",system-ui,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r-s:12px; --r-m:20px; --r-l:28px; --max:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#06162B; --surface:#0C2240; --ink:#EAF4FC; --muted:#9AB2CC; --line:#1C3A5E;
+  --sky:#7CCBF5; --sky-soft:#0F2D4F; --panel:#0E2D52; --on-panel:#FFFFFF; --on-panel-muted:#A9C4E0;
+  --warm:#FF9A55; --warm-ink:#06162B; --photo:#FFFFFF; --wa:#25C266; --shadow:0 10px 30px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#06162B; --surface:#0C2240; --ink:#EAF4FC; --muted:#9AB2CC; --line:#1C3A5E;
+  --sky:#7CCBF5; --sky-soft:#0F2D4F; --panel:#0E2D52; --on-panel:#FFFFFF; --on-panel-muted:#A9C4E0;
+  --warm:#FF9A55; --warm-ink:#06162B; --photo:#FFFFFF; --wa:#25C266; --shadow:0 10px 30px rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;margin:0;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);font-stretch:112%;font-weight:800;line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,6vw,46px)}
+h3{font-size:20px}
+p{margin:0}
+.eyebrow{font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sky)}
+.lead{color:var(--muted);font-size:18px;max-width:60ch}
+section{padding-block:72px}
+.sec-head{display:grid;gap:12px;margin-bottom:32px}
+.price{font-variant-numeric:tabular-nums}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border-radius:999px;border:0;font:700 17px/1 var(--f-body);text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .15s,background .15s,box-shadow .15s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-warm{background:var(--warm);color:var(--warm-ink)}
+.btn-warm:hover{box-shadow:0 8px 20px rgba(255,138,61,.35)}
+.btn-ghost{background:transparent;color:var(--on-panel);box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--on-panel)}
+.btn-ink{background:var(--ink);color:var(--bg)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-block{width:100%}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.logo-mark{width:40px;height:40px;flex:none}
+.logo-text{display:grid;line-height:1}
+.logo-name{font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:23px;letter-spacing:-.02em}
+.logo-sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:3px}
+.nav{display:none;gap:4px}
+.nav a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 12px;border-radius:999px;color:var(--muted)}
+.nav a:hover{color:var(--ink);background:var(--sky-soft)}
+.top .btn{min-height:44px;padding:0 18px;font-size:15px}
+.cart-count{background:var(--ink);color:var(--bg);border-radius:999px;font-size:12px;min-width:22px;height:22px;display:inline-grid;place-items:center;padding:0 6px}
+.menu-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.menu-btn svg{width:22px;height:22px}
+.mnav{border-top:1px solid var(--line);padding:8px 20px 20px;display:grid;gap:2px;background:var(--bg)}
+.mnav a{font-family:var(--f-display);font-stretch:112%;font-weight:800;font-size:24px;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line)}
+@media (min-width:960px){.nav{display:flex}.menu-btn,.mnav{display:none!important}}
+@media (max-width:420px){.top .btn .lbl{display:none}}
+
+/* Hero */
+.hero{padding-block:20px 8px}
+.hero-card{background:var(--panel);color:var(--on-panel);border-radius:var(--r-l);padding:34px 24px;display:grid;gap:34px;overflow:hidden;position:relative}
+.hero h1{font-size:clamp(36px,8vw,60px);font-stretch:112%;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero p{color:var(--on-panel-muted);font-size:18px;max-width:46ch;margin-top:18px}
+.hero .eyebrow{color:var(--sky);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .ctas .btn{flex:1 1 200px}
+.hero-art{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
+.hero-art figure{margin:0;background:var(--photo);border-radius:var(--r-m);aspect-ratio:1;display:grid;place-items:center;padding:10px}
+.hero-art figure:nth-child(2){transform:translateY(22px)}
+.hero-art figure:nth-child(4){transform:translateY(22px)}
+.hero-art img{max-height:100%;object-fit:contain}
+.temp{position:absolute;left:50%;top:50%;transform:translate(-50%,-30%);background:var(--sky);color:#06162B;font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:20px;padding:12px 16px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);white-space:nowrap;display:flex;gap:8px;align-items:center}
+.temp small{font-family:var(--f-body);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-stretch:100%}
+.strip{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;color:var(--muted);font-weight:600;font-size:15px}
+.strip span{display:flex;gap:8px;align-items:center}
+.strip svg{width:18px;height:18px;color:var(--sky)}
+@media (min-width:880px){.hero-card{grid-template-columns:1.15fr 1fr;padding:64px 56px;align-items:center}}
+
+/* Categorías */
+.cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cat{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:18px;display:grid;gap:6px;align-content:start;min-height:132px;transition:border-color .15s,transform .15s}
+.cat:hover:not([aria-disabled="true"]){border-color:var(--sky);transform:translateY(-2px)}
+.cat:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.cat{min-width:0}
+.cat>*{min-width:0;max-width:100%}
+.cat h3{font-size:17px;hyphens:auto;overflow-wrap:break-word}
+.cat p{color:var(--muted);font-size:14px;line-height:1.35}
+.cat .ico{width:38px;height:38px;border-radius:12px;background:var(--sky-soft);color:var(--sky);display:grid;place-items:center;margin-bottom:6px}
+.cat .ico svg{width:22px;height:22px}
+.cat .tag{justify-self:start;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;margin-top:4px;background:var(--sky-soft);color:var(--ink)}
+.cat[aria-disabled="true"]{cursor:default;opacity:.72}
+.cat[aria-disabled="true"] .tag{background:transparent;box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+@media (max-width:559px){.cats{grid-template-columns:1fr;gap:8px}.cat{grid-template-columns:auto 1fr auto;align-items:center;min-height:0;padding:14px;column-gap:14px;row-gap:2px}.cat .ico{grid-row:span 2;margin:0}.cat .tag{grid-row:1/span 2;grid-column:3;margin:0;align-self:center}.cat h3,.cat p{grid-column:2}.cat h3{font-size:16px}.cat[aria-disabled="true"] p{display:none}}
+@media (min-width:720px){.cats{grid-template-columns:repeat(3,1fr)}}
+
+/* Productos */
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:22px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 15px/1 var(--f-body);padding:12px 18px;border-radius:999px;cursor:pointer;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+@media (min-width:1040px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card .ph{background:var(--photo);aspect-ratio:4/3;display:grid;place-items:center;padding:10px;position:relative}
+.card .ph{overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:contain}
+.card .badge{position:absolute;top:10px;left:10px;background:var(--warm);color:#0B2545;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+.card .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .brand{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sky)}
+.card h3{font-size:17px;font-stretch:106%;line-height:1.15}
+.card .desc{color:var(--muted);font-size:14px;line-height:1.4}
+.card .pres{font-size:13px;font-weight:600;color:var(--muted);background:var(--sky-soft);border-radius:8px;padding:4px 8px;justify-self:start;align-self:flex-start}
+.card .pricebox{margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.card .p{font-family:var(--f-display);font-stretch:112%;font-weight:800;font-size:22px;line-height:1.1}
+.card .p small{font-family:var(--f-body);font-weight:600;font-size:13px;color:var(--muted);margin-left:4px}
+.card .bulto{font-size:12px;color:var(--muted);margin-top:2px}
+.card .act{margin-top:12px}
+.card .add{width:100%;min-height:46px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);font:700 15px/1 var(--f-body);cursor:pointer}
+.card .add:hover{background:var(--sky);color:#06162B}
+.step{display:flex;align-items:center;justify-content:space-between;background:var(--sky-soft);border-radius:999px;padding:4px;min-height:46px}
+.step button{width:38px;height:38px;border-radius:50%;border:0;background:var(--surface);color:var(--ink);font:700 20px/1 var(--f-body);cursor:pointer;display:grid;place-items:center}
+.step output{font-weight:700;font-variant-numeric:tabular-nums}
+@media (max-width:480px){.card .desc{display:none}.card h3{font-size:15.5px}.card .p{font-size:18px;font-stretch:100%}.card .p small{display:block;margin:0}.card .body{padding:12px}}
+
+/* Beneficios */
+.bens{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.ben{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:var(--r-m);background:var(--surface);border:1px solid var(--line)}
+.ben .ico{width:46px;height:46px;flex:none;border-radius:14px;background:var(--sky-soft);color:var(--sky);display:grid;place-items:center}
+.ben .ico svg{width:24px;height:24px}
+.ben h3{font-size:17px;margin-bottom:4px}
+.ben p{color:var(--muted);font-size:14.5px;line-height:1.4}
+
+/* Cómo comprar */
+.how{background:var(--panel);color:var(--on-panel);border-radius:var(--r-l);padding:44px 24px}
+.how .eyebrow{color:var(--sky)}
+.how .lead{color:var(--on-panel-muted)}
+.steps{display:grid;gap:14px;margin-top:30px;counter-reset:s}
+.steps li{list-style:none;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:20px;border-radius:var(--r-m);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10)}
+.steps .n{font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:42px;line-height:.9;color:var(--sky)}
+.steps h3{font-size:21px;margin-bottom:6px}
+.steps p{color:var(--on-panel-muted);font-size:15.5px}
+.steps ol{margin:0;padding:0}
+@media (min-width:880px){.how{padding:64px 56px}.steps{grid-template-columns:repeat(3,1fr)}.steps li{grid-template-columns:1fr}}
+
+/* Envíos */
+.split{display:grid;gap:22px}
+@media (min-width:880px){.split{grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:22px}
+.box h3{font-size:18px;margin-bottom:12px}
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 8px 10px 0}
+.tbl td{padding:12px 8px 12px 0;border-top:1px solid var(--line);vertical-align:top}
+.tbl td:first-child{font-weight:600}
+.note{font-size:13.5px;color:var(--muted);margin-top:12px}
+.hours{display:grid;gap:8px;margin-top:4px}
+.hours div{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--line)}
+.hours div:first-child{border-top:0}
+.hours span:last-child{font-weight:600}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{background:var(--sky-soft);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
+
+/* Nosotros */
+.about{display:grid;gap:22px;align-items:center}
+.about blockquote{margin:0;font-family:var(--f-display);font-stretch:106%;font-weight:600;font-size:clamp(22px,4vw,32px);line-height:1.3;text-wrap:pretty}
+.about blockquote b{color:var(--sky);font-weight:800}
+
+/* Contacto */
+.contact{background:var(--panel);color:var(--on-panel);border-radius:var(--r-l);padding:40px 24px;display:grid;gap:28px}
+.contact h2{font-size:clamp(32px,7vw,54px)}
+.contact .lead{color:var(--on-panel-muted)}
+.clist{display:grid;gap:10px}
+.citem{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r-m);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);text-decoration:none;color:var(--on-panel)}
+.citem svg{width:24px;height:24px;color:var(--sky);flex:none}
+.citem small{display:block;color:var(--on-panel-muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.citem b{font-size:17px;user-select:all}
+.copy{margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.3);color:var(--on-panel);border-radius:999px;padding:8px 14px;font:600 13px var(--f-body);cursor:pointer}
+@media (min-width:880px){.contact{grid-template-columns:1.1fr 1fr;padding:64px 56px;align-items:center}}
+
+/* Footer */
+footer{padding-block:40px 120px;border-top:1px solid var(--line);margin-top:72px}
+footer .wrap{display:grid;gap:18px}
+.fl{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--muted);font-size:15px}
+.fl a{text-decoration:none;font-weight:600;color:var(--ink)}
+.copyright{color:var(--muted);font-size:13px}
+
+/* Flotantes */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.25);text-decoration:none}
+.fab svg{width:32px;height:32px}
+.cartbar{position:fixed;left:16px;right:88px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;padding:0 8px 0 20px;border-radius:999px;background:var(--ink);color:var(--bg);box-shadow:0 12px 30px rgba(0,0,0,.25);border:0;font:600 15px var(--f-body);cursor:pointer;max-width:520px}
+.cartbar b{font-family:var(--f-display);font-stretch:112%;font-size:18px}
+.cartbar .go{background:var(--warm);color:var(--warm-ink);border-radius:999px;padding:12px 16px;font-weight:700}
+@media (min-width:720px){.cartbar{left:auto;right:92px;width:440px}}
+
+/* Pedido (drawer) */
+.scrim{position:fixed;inset:0;background:rgba(3,12,26,.55);z-index:60}
+.drawer{position:fixed;z-index:61;inset:auto 0 0 0;max-height:92%;background:var(--bg);border-radius:var(--r-l) var(--r-l) 0 0;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,0,0,.3)}
+@media (min-width:720px){.drawer{inset:0 0 0 auto;width:440px;max-height:none;border-radius:0}}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 12px;border-bottom:1px solid var(--line)}
+.dh h2{font-size:26px}
+.x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:22px;line-height:1}
+.db{overflow:auto;padding:12px 20px;flex:1}
+.li{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.li img{width:56px;height:56px;object-fit:contain;background:var(--photo);border-radius:12px;padding:4px}
+.li .nm{font-weight:700;font-size:15px;line-height:1.2}
+.li .sub{font-size:13px;color:var(--muted)}
+.li .step{min-height:40px}
+.li .step button{width:32px;height:32px;font-size:18px}
+.li .step output{min-width:24px;text-align:center}
+.empty{text-align:center;color:var(--muted);padding:32px 8px;display:grid;gap:14px;justify-items:center}
+.form{display:grid;gap:12px;margin-top:18px}
+.form label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.form input,.form select,.form textarea{font:500 16px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px;width:100%}
+.form textarea{min-height:76px;resize:vertical}
+.df{padding:14px 20px calc(18px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);display:grid;gap:10px;background:var(--bg)}
+.tot{display:flex;justify-content:space-between;align-items:baseline}
+.tot b{font-family:var(--f-display);font-stretch:112%;font-size:26px}
+.tiny{font-size:12.5px;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--muted);font:600 14px var(--f-body);text-decoration:underline;cursor:pointer;justify-self:center;padding:6px}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" class="logo" aria-label="Inicio">
+      <!-- LOGO: para usar tu logo, reemplazá este <svg> por <img src="img/logo.png" alt="Frizá" class="logo-mark"> -->
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#0B2545"/><g stroke="#7CCBF5" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M20 8v24M9.6 14l20.8 12M9.6 26l20.8-12"/><path d="M16.5 9.8 20 12.6l3.5-2.8M16.5 30.2 20 27.4l3.5 2.8"/></g><circle cx="20" cy="20" r="3.2" fill="#FF8A3D"/></svg>
+      <span class="logo-text"><span class="logo-name" data-brand>Frizá</span><span class="logo-sub">Río Cuarto</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#como-comprar">Cómo comprar</a><a href="#envios">Envíos</a><a href="#contacto">Contacto</a>
+    </nav>
+    <button class="btn btn-warm" id="btnPedidoTop" type="button"><span class="lbl">Hacer pedido</span><span class="cart-count" id="countTop">0</span></button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav class="mnav" id="mnav" hidden aria-label="Menú móvil">
+    <a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#como-comprar">Cómo comprar</a><a href="#envios">Envíos</a><a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" aria-labelledby="h-hero">
+  <div class="wrap">
+    <div class="hero-card">
+      <div>
+        <div class="eyebrow">Río Cuarto · Envíos a domicilio</div>
+        <h1 id="h-hero">Frizados ricos, prácticos y <em>directo a tu casa</em></h1>
+        <p>Alimentos frizados para resolver tus comidas de todos los días. Estamos en Río Cuarto, Córdoba, y hacemos envíos a domicilio.</p>
+        <div class="ctas">
+          <a class="btn btn-warm" href="#productos">Ver productos</a>
+          <a class="btn btn-ghost" data-wa href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Pedir por WhatsApp</a>
+        </div>
+      </div>
+      <!-- IMÁGENES DEL HERO: cambiá los src por tus fotos (carpeta img/) -->
+      <div class="hero-art" aria-hidden="true">
+        <figure><img src="img/balde-marron.jpg" alt=""></figure>
+        <figure><img src="img/papas-noisette.jpg" alt=""></figure>
+        <figure><img src="img/hamburguesa-clasica.jpg" alt=""></figure>
+        <figure><img src="img/palito-bombon.jpg" alt=""></figure>
+        <div class="temp">−18 °C <small>cadena de frío</small></div>
+      </div>
+    </div>
+    <div class="strip">
+      <span><svg viewBox="0 0 24 24"><use href="#i-truck"/></svg>Envío a domicilio</span>
+      <span><svg viewBox="0 0 24 24"><use href="#i-snow"/></svg>Llega congelado</span>
+      <span><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Pedís por WhatsApp</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORÍAS (se arman desde productos.js) ============ -->
+<section id="categorias" aria-labelledby="h-cat">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Categorías</span><h2 id="h-cat">¿Qué tenés ganas de comer?</h2></div>
+    <div class="cats" id="cats" lang="es"></div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTOS (se arman desde productos.js) ============ -->
+<section id="productos" aria-labelledby="h-prod" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Productos</span><h2 id="h-prod">Para tener siempre en el freezer</h2>
+      <p class="lead">Sumá lo que quieras al pedido y lo mandás por WhatsApp con un toque.</p></div>
+    <div class="filters" id="filters" role="toolbar" aria-label="Filtrar por categoría"></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ BENEFICIOS ============ -->
+<section id="beneficios" aria-labelledby="h-ben" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Por qué comprarnos</span><h2 id="h-ben">Comer bien sin complicarte</h2></div>
+    <div class="bens">
+      <div class="ben"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-truck"/></svg></span><div><h3>Envíos a domicilio</h3><p>Te lo llevamos a tu casa en Río Cuarto, sin cortar la cadena de frío.</p></div></div>
+      <div class="ben"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-badge"/></svg></span><div><h3>Productos seleccionados</h3><p>Marcas que conocés: Aloha, Lamb Weston, BEM Brasil, Unión Ganadera.</p></div></div>
+      <div class="ben"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-pan"/></svg></span><div><h3>Fácil de preparar</h3><p>Horno, plancha, freidora o air fryer. Listo en minutos.</p></div></div>
+      <div class="ben"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-snow"/></svg></span><div><h3>Siempre en el freezer</h3><p>Tenés la comida resuelta para cuando no hay tiempo.</p></div></div>
+      <div class="ben"><span class="ico"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg></span><div><h3>Compra rápida por WhatsApp</h3><p>Armás el pedido acá y nos llega listo. Sin registrarte.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO COMPRAR ============ -->
+<section id="como-comprar" aria-labelledby="h-how" style="padding-top:0">
+  <div class="wrap">
+    <div class="how">
+      <div class="sec-head" style="margin-bottom:0"><span class="eyebrow">Cómo comprar</span><h2 id="h-how">Pedir es así de fácil</h2></div>
+      <ol class="steps">
+        <li><span class="n">1</span><div><h3>Elegí tus productos</h3><p>Tocá “Agregar al pedido” en lo que quieras y elegí la cantidad.</p></div></li>
+        <li><span class="n">2</span><div><h3>Mandanos tu pedido por WhatsApp</h3><p>Completá tu nombre y dirección. El mensaje se arma solo, vos solo lo enviás.</p></div></li>
+        <li><span class="n">3</span><div><h3>Te lo llevamos a tu casa</h3><p>Te confirmamos el total y el horario, y te lo llevamos congelado.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENVÍOS (zonas y horarios en productos.js → CONFIG) ============ -->
+<section id="envios" aria-labelledby="h-env" style="padding-top:0">
+  <div class="wrap split">
+    <div class="sec-head">
+      <span class="eyebrow">Envíos</span><h2 id="h-env">Llegamos a toda la ciudad</h2>
+      <p class="lead">Realizamos envíos a domicilio en Río Cuarto, Córdoba.</p>
+      <div class="pill-row" id="envPills"></div>
+    </div>
+    <div style="display:grid;gap:14px">
+      <div class="box"><h3>Zonas y costos</h3>
+        <div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Zona</th><th>Costo</th><th>Entrega</th></tr></thead><tbody id="zonas"></tbody></table></div>
+        <p class="note">Si no ves tu barrio, escribinos y lo coordinamos.</p></div>
+      <div class="box"><h3>Horarios de entrega y atención</h3><div class="hours" id="horas1"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE NOSOTROS ============ -->
+<section id="nosotros" aria-labelledby="h-about" style="padding-top:0">
+  <div class="wrap about">
+    <span class="eyebrow" id="h-about">Sobre nosotros</span>
+    <blockquote>Somos un emprendimiento de <b>Río Cuarto</b> pensado para hacer más simples las comidas de todos los días. Seleccionamos alimentos frizados prácticos, ricos y fáciles de preparar, y te los llevamos directamente a tu casa.</blockquote>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" aria-labelledby="h-con" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">Contacto</span><h2 id="h-con">¿Hacemos tu pedido?</h2>
+        <p class="lead">Escribinos y te respondemos en el horario de atención.</p>
+        <a class="btn btn-wa btn-block" data-wa href="#" target="_blank" rel="noopener" style="margin-top:14px;min-height:62px;font-size:18px"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Escribinos por WhatsApp</a>
+      </div>
+      <div class="clist">
+        <div class="citem"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg><div><small>WhatsApp</small><b id="waText"></b></div><button class="copy" type="button" id="copyWa">Copiar</button></div>
+        <a class="citem" id="igLink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#i-ig"/></svg><div><small>Instagram</small><b id="igText"></b></div></a>
+        <div class="citem"><svg viewBox="0 0 24 24"><use href="#i-pin"/></svg><div><small>Ubicación</small><b>Río Cuarto, Córdoba</b></div></div>
+        <div class="citem" style="align-items:flex-start"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg><div style="flex:1"><small>Días y horarios</small><div id="horas2" style="display:grid;gap:2px;margin-top:4px"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#inicio" class="logo"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#0B2545"/><g stroke="#7CCBF5" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M20 8v24M9.6 14l20.8 12M9.6 26l20.8-12"/><path d="M16.5 9.8 20 12.6l3.5-2.8M16.5 30.2 20 27.4l3.5 2.8"/></g><circle cx="20" cy="20" r="3.2" fill="#FF8A3D"/></svg><span class="logo-text"><span class="logo-name" data-brand>Frizá</span><span class="logo-sub">Alimentos frizados</span></span></a>
+    <div class="fl"><a id="igFoot" href="#" target="_blank" rel="noopener">Instagram</a><a data-wa href="#" target="_blank" rel="noopener">WhatsApp</a><span>Río Cuarto, Córdoba</span></div>
+    <p class="copyright">© <span id="yr"></span> <span data-brand>Frizá</span>. Precios sujetos a modificación sin previo aviso. Las imágenes son ilustrativas.</p>
+  </div>
+</footer>
+
+<!-- Flotantes -->
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a>
+<button class="cartbar" id="cartbar" type="button" hidden><span><span id="cbCount">0</span> productos · <b class="price" id="cbTotal">$ 0</b></span><span class="go">Ver pedido</span></button>
+
+<!-- Pedido -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="h-ped">
+  <div class="dh"><h2 id="h-ped">Tu pedido</h2><button class="x" id="closeD" type="button" aria-label="Cerrar">×</button></div>
+  <div class="db">
+    <div id="lines"></div>
+    <div class="form" id="orderForm">
+      <label for="fNombre">Nombre<input id="fNombre" autocomplete="name" placeholder="Ej: Lucía"></label>
+      <label for="fDir">Dirección y barrio<input id="fDir" autocomplete="street-address" placeholder="Ej: Constitución 850, Centro"></label>
+      <label for="fPago">Forma de pago<select id="fPago"><option>Efectivo</option><option>Transferencia</option><option>Mercado Pago</option></select></label>
+      <label for="fNota">Comentarios<textarea id="fNota" placeholder="Horario preferido, timbre, etc."></textarea></label>
+    </div>
+  </div>
+  <div class="df" id="dfoot">
+    <div class="tot"><span>Total estimado</span><b class="price" id="dTotal">$ 0</b></div>
+    <p class="tiny">El envío y el total final te los confirmamos por WhatsApp.</p>
+    <a class="btn btn-wa btn-block" id="sendWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Enviar pedido por WhatsApp</a>
+    <button class="linkbtn" id="clear" type="button">Vaciar pedido</button>
+  </div>
+</aside>
+
+<!-- Íconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></g></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9.5 3.5 12 5.5l2.5-2M9.5 20.5 12 18.5l2.5 2"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 14.6 5l3.5-.2.6 3.5 2.8 2.2-1.7 3.1.8 3.4-3.4 1-1.7 3.1-3.5-1.4-3.5 1.4-1.7-3.1-3.4-1 .8-3.4L2.5 10.5l2.8-2.2.6-3.5 3.5.2z"/><path d="m8.5 12 2.4 2.4 4.6-4.6"/></g></symbol>
+  <symbol id="i-pan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 12h14a0 0 0 0 1 0 0 7 7 0 0 1-14 0zM17 13h4M7 8c0-1.5 1-1.5 1-3M11 8c0-1.5 1-1.5 1-3"/></g></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="i-burger" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 10a8 5 0 0 1 16 0zM3 14h18M4 17.5h16a0 0 0 0 1 0 0 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></g></symbol>
+  <symbol id="i-fries" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 10h14l-2 11H7zM8 10 7 3M11 10V2M14 10l1-7M17 10l1.5-5"/></g></symbol>
+  <symbol id="i-ice" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="13" rx="5"/><path d="M12 15.5v6"/></g></symbol>
+  <symbol id="i-dish" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 15h18M5 15a7 7 0 0 1 14 0M12 6V4M2 19h20"/></g></symbol>
+</svg>
+
+<script src="productos.js"></script>
+<script>
+(function(){
+  const C = window.CONFIG, CATS = window.CATEGORIAS, P = window.PRODUCTOS;
+  const $ = s => document.querySelector(s);
+  const money = v => "$ " + v.toLocaleString("es-AR",{minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits:2});
+  const waLink = txt => "https://wa.me/" + C.whatsapp + (txt ? "?text=" + encodeURIComponent(txt) : "");
+  const catIcon = {hamburguesas:"i-burger", papas:"i-fries", helados:"i-ice"};
+
+  // Marca, contacto, horarios
+  document.querySelectorAll("[data-brand]").forEach(e => e.textContent = C.marca);
+  document.querySelectorAll("[data-wa]").forEach(a => a.href = waLink("¡Hola " + C.marca + "! Quiero hacer un pedido."));
+  $("#waText").textContent = C.whatsappVisible;
+  $("#igText").textContent = "@" + C.instagram;
+  $("#igLink").href = $("#igFoot").href = "https://instagram.com/" + C.instagram;
+  $("#yr").textContent = new Date().getFullYear();
+  const hoursHTML = C.horarios.map(h => `<div><span>${h.dias}</span><span>${h.horas}</span></div>`).join("");
+  $("#horas1").innerHTML = hoursHTML;
+  $("#horas2").innerHTML = C.horarios.map(h => `<span><b style="font-size:15px">${h.dias}:</b> ${h.horas}</span>`).join("");
+  $("#zonas").innerHTML = C.envios.map(z => `<tr><td>${z.zona}</td><td>${z.costo}</td><td>${z.entrega}</td></tr>`).join("");
+  $("#envPills").innerHTML = [C.pedidoMinimo && "Pedido mínimo " + C.pedidoMinimo, C.envioGratisDesde && "Envío gratis desde " + C.envioGratisDesde, "Efectivo, transferencia o Mercado Pago"].filter(Boolean).map(t => `<span class="pill">${t}</span>`).join("");
+  $("#copyWa").addEventListener("click", e => {
+    const b = e.currentTarget;
+    navigator.clipboard.writeText(C.whatsappVisible).then(() => { b.textContent = "Copiado"; setTimeout(() => b.textContent = "Copiar", 1600); })
+      .catch(() => { const r = document.createRange(); r.selectNodeContents($("#waText")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });
+  });
+
+  // Menú mobile
+  const mb = $("#menuBtn"), mn = $("#mnav");
+  mb.addEventListener("click", () => { const o = mn.hidden; mn.hidden = !o; mb.setAttribute("aria-expanded", o); });
+  mn.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { mn.hidden = true; mb.setAttribute("aria-expanded", false); }));
+
+  // Pedido (se recuerda en este navegador)
+  let cart = {};
+  try { cart = JSON.parse(localStorage.getItem("pedido") || "{}") || {}; } catch(e) { cart = {}; }
+  const save = () => { try { localStorage.setItem("pedido", JSON.stringify(cart)); } catch(e) {} };
+  const byId = Object.fromEntries(P.map(p => [p.id, p]));
+  Object.keys(cart).forEach(k => { if (!byId[k]) delete cart[k]; });
+
+  // Categorías
+  const counts = {}; P.forEach(p => counts[p.categoria] = (counts[p.categoria] || 0) + 1);
+  $("#cats").innerHTML = CATS.map(c => {
+    const on = c.activa && counts[c.id];
+    return `<button class="cat" type="button" data-cat="${c.id}" ${on ? "" : 'aria-disabled="true"'}>
+      <span class="ico"><svg viewBox="0 0 24 24"><use href="#${catIcon[c.id] || "i-dish"}"/></svg></span>
+      <h3>${c.nombre}</h3><p>${c.texto}</p>
+      <span class="tag">${on ? counts[c.id] + (counts[c.id] === 1 ? " producto" : " productos") : "Muy pronto"}</span></button>`;
+  }).join("");
+  $("#cats").addEventListener("click", e => {
+    const b = e.target.closest(".cat"); if (!b || b.getAttribute("aria-disabled")) return;
+    setFilter(b.dataset.cat); document.getElementById("productos").scrollIntoView();
+  });
+
+  // Filtros
+  const filters = [{id:"destacados", nombre:"Destacados"}, {id:"todos", nombre:"Todos"}]
+    .concat(CATS.filter(c => c.activa && counts[c.id]).map(c => ({id:c.id, nombre:c.nombre})));
+  let current = "destacados";
+  $("#filters").innerHTML = filters.map(f => `<button class="chip" type="button" data-f="${f.id}">${f.nombre}</button>`).join("");
+  $("#filters").addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) setFilter(b.dataset.f); });
+  function setFilter(f){ current = f; document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.f === f)); renderGrid(); }
+
+  function action(p){
+    const q = cart[p.id] || 0;
+    return q ? `<div class="step"><button type="button" data-dec="${p.id}" aria-label="Quitar uno">−</button><output>${q}</output><button type="button" data-inc="${p.id}" aria-label="Agregar uno">+</button></div>`
+             : `<button class="add" type="button" data-inc="${p.id}" aria-label="Agregar ${p.nombre} al pedido">+ Agregar</button>`;
+  }
+  function renderGrid(){
+    const list = P.filter(p => current === "todos" || (current === "destacados" ? p.destacado : p.categoria === current));
+    $("#grid").innerHTML = list.map(p => `
+      <article class="card">
+        <div class="ph">${p.destacado && current !== "destacados" ? '<span class="badge">Destacado</span>' : ""}<img src="${p.imagen}" alt="${p.nombre}" loading="lazy" width="320" height="240"></div>
+        <div class="body">
+          <span class="brand">${p.marca}</span>
+          <h3>${p.nombre}</h3>
+          <p class="desc">${p.descripcion}</p>
+          <span class="pres">${p.presentacion}</span>
+          <div class="pricebox">
+            <div class="p price">${money(p.precio)}<small>${p.unidad}</small></div>
+            ${p.bulto ? `<div class="bulto price">Bulto ${p.bulto.texto}: ${money(p.bulto.precio)}</div>` : ""}
+            <div class="act" data-act="${p.id}">${action(p)}</div>
+          </div>
+        </div>
+      </article>`).join("");
+  }
+  function change(id, d){
+    cart[id] = Math.max(0, (cart[id] || 0) + d); if (!cart[id]) delete cart[id];
+    save(); document.querySelectorAll(`[data-act="${id}"]`).forEach(el => el.innerHTML = action(byId[id])); renderCart();
+  }
+  document.addEventListener("click", e => {
+    const i = e.target.closest("[data-inc]"), d = e.target.closest("[data-dec]");
+    if (i) change(i.dataset.inc, 1); if (d) change(d.dataset.dec, -1);
+  });
+
+  // Drawer
+  const drawer = $("#drawer"), scrim = $("#scrim");
+  function openD(){ renderCart(); drawer.hidden = scrim.hidden = false; $("#closeD").focus(); document.body.style.overflow = "hidden"; }
+  function closeD(){ drawer.hidden = scrim.hidden = true; document.body.style.overflow = ""; }
+  $("#cartbar").addEventListener("click", openD);
+  $("#btnPedidoTop").addEventListener("click", () => Object.keys(cart).length ? openD() : document.getElementById("productos").scrollIntoView());
+  $("#closeD").addEventListener("click", closeD); scrim.addEventListener("click", closeD);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !drawer.hidden) closeD(); });
+  $("#clear").addEventListener("click", () => { cart = {}; save(); renderGrid(); renderCart(); });
+  ["fNombre","fDir","fPago","fNota"].forEach(id => $("#"+id).addEventListener("input", updateMsg));
+
+  function totals(){ let n = 0, t = 0; for (const [id,q] of Object.entries(cart)) { n += q; t += q * byId[id].precio; } return {n, t}; }
+  function renderCart(){
+    const {n, t} = totals(), ids = Object.keys(cart);
+    $("#countTop").textContent = n; $("#cbCount").textContent = n; $("#cbTotal").textContent = money(t); $("#dTotal").textContent = money(t);
+    $("#cartbar").hidden = n === 0;
+    $("#lines").innerHTML = ids.length ? ids.map(id => { const p = byId[id], q = cart[id]; return `
+      <div class="li"><img src="${p.imagen}" alt=""><div><div class="nm">${p.nombre}</div><div class="sub price">${money(p.precio)} ${p.unidad}</div><div class="sub price" style="font-weight:700;color:var(--ink)">${money(p.precio*q)}</div></div>
+      <div class="step"><button type="button" data-dec="${id}" aria-label="Quitar uno">−</button><output>${q}</output><button type="button" data-inc="${id}" aria-label="Agregar uno">+</button></div></div>`; }).join("")
+      : `<div class="empty"><p>Todavía no agregaste productos.</p><button class="btn btn-ink" type="button" id="goShop">Ver productos</button></div>`;
+    const gs = $("#goShop"); if (gs) gs.onclick = () => { closeD(); document.getElementById("productos").scrollIntoView(); };
+    $("#orderForm").hidden = $("#dfoot").hidden = !ids.length;
+    updateMsg();
+  }
+  function updateMsg(){
+    const {t} = totals();
+    const lines = Object.entries(cart).map(([id,q]) => { const p = byId[id]; return `• ${q} x ${p.nombre} (${p.presentacion}) — ${money(p.precio*q)}`; });
+    const v = id => $("#"+id).value.trim();
+    const out = [`¡Hola ${C.marca}! Quiero hacer este pedido:`, "", ...lines, "", `Total estimado: ${money(t)}`, ""];
+    if (v("fNombre")) out.push(`Nombre: ${v("fNombre")}`);
+    if (v("fDir")) out.push(`Dirección: ${v("fDir")}`);
+    out.push(`Pago: ${v("fPago")}`);
+    if (v("fNota")) out.push(`Comentarios: ${v("fNota")}`);
+    const msg = out.join("\n");
+    $("#sendWa").href = waLink(msg);
+  }
+
+  setFilter("destacados"); renderCart();
+})();
+</script>
+
+<!-- Datos para Google (SEO local) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Frizá","description":"Alimentos frizados con envío a domicilio en Río Cuarto, Córdoba.","areaServed":"Río Cuarto, Córdoba, Argentina","address":{"@type":"PostalAddress","addressLocality":"Río Cuarto","addressRegion":"Córdoba","addressCountry":"AR"}}
+</script>
+
+</body>
+</html>
